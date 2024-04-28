@@ -6,12 +6,8 @@ class RemoveFileOrFolderCommand(Command):
     """
     Removes folder or file from working directory
     """
-    def __init__(self, alias, commands_dict, working_directory):
-        super().__init__(alias, commands_dict)
-        self.__working_directory = working_directory
-
     def _execute(self, args):
-        path = rf'{self.__working_directory}\{args[0]}'
+        path = rf'{self._console.current_directory}\{args[0]}'
         try:
             self.remove_path(path)
         except PermissionError:
