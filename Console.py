@@ -17,8 +17,11 @@ class Console:
     def input_new_command(self):
         raw_input = input(f'{self.current_directory}: >>> ')
         raw_input = raw_input.strip()
-        command, *args = raw_input.split()
-        available_commands[command].process_command(args)
+        try:
+            command, *args = raw_input.split()
+            available_commands[command].process_command(args)
+        except Exception as e:
+            print(f'Invalid command: {e}')
         self.input_new_command()
 
     def __register_new_commands(self):
