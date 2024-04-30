@@ -1,6 +1,7 @@
 from Commands.AddFolderCommand import AddFolderCommand
 from Commands.NavigationCommand import NavigationCommand
 from Commands.RemoveFileOrFolderCommand import RemoveFileOrFolderCommand
+from Commands.PeekFilesCommand import PeekFilesCommand
 
 available_commands = dict()
 
@@ -33,3 +34,4 @@ class Console:
         available_commands['mkdir'] = AddFolderCommand('mkdir', available_commands, self)
         available_commands['rm'] = RemoveFileOrFolderCommand('rm', available_commands, self)
         available_commands['go'] = NavigationCommand('go', available_commands, self)
+        available_commands['cat'] = PeekFilesCommand('cat', available_commands, self)
