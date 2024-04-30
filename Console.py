@@ -14,18 +14,22 @@ class Console:
     def get_working_directory(self):
         return self.__working_directory
 
-    def input_new_command(self):
-        raw_input = input(f'{self.current_directory}: >>> ')
-        raw_input = raw_input.strip()
+    def execute_command(self, raw_input):
         try:
             command, *args = raw_input.split()
-            available_commands[command].process_command(args)
-        except Exception as e:
-            print(f'Invalid command: {e}')
+            return available_commands[command].process_command(args)
+        except:
+            return -1
+
+    def input_new_command(self, raw_input=None):
+        if raw_input is None:
+            raw_input = input(f'{self.current_directory}: >>> ')
+            raw_input = raw_input.strip()
+
+        self.execute_command(raw_input)
         self.input_new_command()
 
     def __register_new_commands(self):
         available_commands['mkdir'] = AddFolderCommand('mkdir', available_commands, self)
         available_commands['rm'] = RemoveFileOrFolderCommand('rm', available_commands, self)
         available_commands['go'] = NavigationCommand('go', available_commands, self)
-

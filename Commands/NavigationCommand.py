@@ -17,7 +17,9 @@ class NavigationCommand(Command):
 
         if os.path.exists(path):
             self._console.current_directory = path
+            return 0
         else:
             print(f'{path} does not exist')
+            return -1
 
 

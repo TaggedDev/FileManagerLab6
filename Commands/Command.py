@@ -5,8 +5,9 @@ class Command:
         commands_dict[alias] = self
 
     def process_command(self, args):
-        self._execute(args)
+        code = self._execute(args)
         self._on_finish()
+        return code
 
     def _execute(self, args):
         pass
