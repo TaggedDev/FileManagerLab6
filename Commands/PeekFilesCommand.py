@@ -16,10 +16,10 @@ class PeekFilesCommand(Command):
     def display_file_content(self, filename):
         path = os.path.join(self._console.current_directory, filename)
         if not os.path.isfile(path):
-            print('Cant read file')
+            print('Specified path is not a file')
             return
         try:
-            with open(filename, 'r') as file:
+            with open(path, 'r') as file:
                 print(file.read())
-        except:
-            print('Cant read file')
+        except Exception as e:
+            print(f'Cant read file: {e}')
