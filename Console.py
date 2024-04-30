@@ -4,6 +4,7 @@ from Commands.RemoveFileOrFolderCommand import RemoveFileOrFolderCommand
 from Commands.PeekFilesCommand import PeekFilesCommand
 from Commands.CreateNewFileCommand import CreateNewFileCommand
 from Commands.WriteInFileCommand import WriteInFileCommand
+from Commands.RenameFileCommand import RenameFileCommand
 
 available_commands = dict()
 
@@ -39,3 +40,4 @@ class Console:
         available_commands['cat'] = PeekFilesCommand('cat', available_commands, self)
         available_commands['touch'] = CreateNewFileCommand('touch', available_commands, self)
         available_commands['write'] = WriteInFileCommand('write', available_commands, self)
+        available_commands['rename'] = RenameFileCommand('rename', available_commands, self)
