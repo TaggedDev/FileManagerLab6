@@ -5,6 +5,7 @@ from Commands.PeekFilesCommand import PeekFilesCommand
 from Commands.CreateNewFileCommand import CreateNewFileCommand
 from Commands.WriteInFileCommand import WriteInFileCommand
 from Commands.RenameFileCommand import RenameFileCommand
+from Commands.MoveFileCommand import MoveFileCommand
 
 available_commands = dict()
 
@@ -41,3 +42,4 @@ class Console:
         available_commands['touch'] = CreateNewFileCommand('touch', available_commands, self)
         available_commands['write'] = WriteInFileCommand('write', available_commands, self)
         available_commands['rename'] = RenameFileCommand('rename', available_commands, self)
+        available_commands['move'] = MoveFileCommand('move', available_commands, self)
