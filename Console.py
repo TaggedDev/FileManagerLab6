@@ -2,6 +2,7 @@ from Commands.AddFolderCommand import AddFolderCommand
 from Commands.NavigationCommand import NavigationCommand
 from Commands.RemoveFileOrFolderCommand import RemoveFileOrFolderCommand
 from Commands.PeekFilesCommand import PeekFilesCommand
+from Commands.CreateNewFileCommand import CreateNewFileCommand
 
 available_commands = dict()
 
@@ -35,3 +36,4 @@ class Console:
         available_commands['rm'] = RemoveFileOrFolderCommand('rm', available_commands, self)
         available_commands['go'] = NavigationCommand('go', available_commands, self)
         available_commands['cat'] = PeekFilesCommand('cat', available_commands, self)
+        available_commands['touch'] = CreateNewFileCommand('touch', available_commands, self)
