@@ -14,7 +14,7 @@ def main():
     except:
         with open('config.cfg', 'w') as file:
             file.write(os.getcwd())
-        raise ConnectionError('File config.cfg first row must have path to working directory')
+        raise ConnectionError('No config file found. Created config file with working directory path. Please restart.')
 
     console = Console(WORKING_DIRECTORY)
     console.input_new_command()

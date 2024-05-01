@@ -4,7 +4,7 @@ import os
 
 class RemoveFileOrFolderCommand(Command):
     """
-    Removes folder or file from working directory
+    Removes folder or file from working directory. Folder path requires slash in the end
     """
 
     def _execute(self, args):
