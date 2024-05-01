@@ -1,6 +1,6 @@
 import os.path
 
-from FileManagerLab6.Commands.Command import Command
+from Commands.Command import Command
 
 
 class CreateNewFileCommand(Command):
