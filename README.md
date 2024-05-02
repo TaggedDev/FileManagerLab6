@@ -4,7 +4,7 @@ File manager project.
 
 File manager is a command line that uses `os` module and `shutil`. File manager specifies environment folder and works only inside of it. Will create config folder on the first launch. Available commands:
 * `mkdir foldername` - create folder in current directory called `foldername` (supports creating inner folders)
-* `rm folderpath` - removes folder located on the `path` (folder path must end with \)
+* `rm folderpath` - removes folder located on the `path` (folder path must end with `\`)
 * `go path` - moves in folder
 * `go ..` - goes back
 * `cat path` - displays folder content or file content
